@@ -1,0 +1,18 @@
+<mtapp:setting
+    id="has_entry_memo"
+    label="<__trans phrase="Display a memo on Edit Entry/Page screens">"
+>
+    <input type="checkbox" name="has_entry_memo" id="has_entry_memo" value="1"<mt:if name="has_entry_memo"> checked="checked"</mt:if> />
+</mtapp:setting>
+<mtapp:setting
+    id="entry_memo_title"
+    label="<__trans phrase="Memo Title">"
+>
+    <input type="text" size="30" name="entry_memo_title" id="entry_memo_title" value="<mt:var name="entry_memo_title" escape="html">" />
+</mtapp:setting>
+<mtapp:setting
+    id="entry_memo"
+    label="<__trans phrase="Memo Body">"
+>
+    <textarea rows="5" cols="30" name="entry_memo" id="entry_memo"><mt:var name="entry_memo" escape="html"></textarea>
+</mtapp:setting>

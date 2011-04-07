@@ -1,0 +1,27 @@
+name: Memo
+author_link: http://ubiquitic.com/
+author_name: François Nonnenmacher, Ubiquitic
+author_link: http://ubiquitic.com/
+description: <__trans phrase="Display a memo on Edit Entry/Page screens">
+version: 1.0
+l10n_class: Memo::L10N
+
+blog_config_template: blog_config.tmpl
+
+settings:
+    has_entry_memo:
+        Default: 0
+        Scope: blog
+    entry_memo_title:
+        Default: ''
+        Scope: blog
+    entry_memo:
+        Default: ''
+        Scope: blog
+
+applications:
+    cms:
+        callbacks:
+            template_param.edit_entry:
+                priority: 1
+                handler: Memo::Plugin::update_edit_entry
