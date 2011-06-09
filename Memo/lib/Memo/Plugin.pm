@@ -1,12 +1,11 @@
 # Memo - Displays a memo on the Edit Entry screen
-# Release : v1.0 2011-04-07
+# Release : v1.1 2011-06-10
 # Copyright © François Nonnenmacher, Ubiquitic
 
 package Memo::Plugin;
 
 use strict;
 use MT;
-use 5.010;
 
 sub update_edit_entry {
 	my ($cb, $app, $param, $tmpl) = @_;
@@ -15,7 +14,7 @@ sub update_edit_entry {
     return unless ($cfg->{has_entry_memo});
 	my $header_node = $tmpl->getElementById('header_include');
 	return unless $header_node;
-    my $title = $cfg->{entry_memo_title} || 'Memo';
+    my $title = $cfg->{entry_memo_title} || $plugin->translate('Memo');
     my $memo = $cfg->{entry_memo};
 	$tmpl->insertAfter(
 		$tmpl->createElement('var', {
@@ -27,7 +26,9 @@ sub update_edit_entry {
 		<h3 class="widget-label"><span>$title</span></h3>
 	</div>
 	<div class="widget-content">
+		<div class="widget-content-inner">
 		$memo
+		</div>
 	</div>
 </div>
 END
