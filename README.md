@@ -34,7 +34,7 @@ To display a global message on top of all screens in the CMS:
 1. Go to the global plugins page and click on the Memo Settings tab.
 1. Tick the "Display a global message" checkbox (unchecking it will prevent the message to show up).
 1. (Optional) enter a CSS Class to style the message using MT's own CSS classes for messages (i.e. info, alert, error, beta).
-1. Enter the message (formatted as HTML) in "Message Body". Note: this code will be wrapped into a <div id="global-memo" class="msg msg-class">…</div> block, where _class_ will be replaced by whatever you put into the CSS Class field above.
+1. Enter the message (formatted as HTML) in "Message Body". Note: this code will be wrapped into a <code>&lt;div id="global-memo" class="msg msg-_class_"&gt;…&lt;/div&gt;</code> block, where _class_ will be replaced by whatever you put into the CSS Class field above.
 
 
 ## L10N
