@@ -3,10 +3,11 @@ author_link: http://ubiquitic.com/
 author_name: François Nonnenmacher, Ubiquitic
 author_link: http://ubiquitic.com/
 plugin_link: http://ubiquitic.com/memo-movable-type-plugin.html
-description: <__trans phrase="Display a memo on Edit Entry/Page screens">
-version: 1.1
+description: <__trans phrase="Display a memo on Edit Entry/Page screens, or a global one.">
+version: 1.2
 l10n_class: Memo::L10N
 
+system_config_template: sys_config.tmpl
 blog_config_template: blog_config.tmpl
 
 settings:
@@ -19,6 +20,15 @@ settings:
     entry_memo:
         Default: ''
         Scope: blog
+    has_global_memo:
+        Default: 0
+        Scope: system
+    global_memo_class:
+        Default: ''
+        Scope: system
+    global_memo:
+        Default: ''
+        Scope: system
 
 applications:
     cms:
@@ -26,3 +36,6 @@ applications:
             template_param.edit_entry:
                 priority: 1
                 handler: Memo::Plugin::update_edit_entry
+            template_source.header:
+                priority: 1
+                handler: Memo::Plugin::global_memo

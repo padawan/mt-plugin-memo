@@ -11,6 +11,7 @@ Memo will place a text box on top of the other widgets in the right column of th
 * MT 5.x
 * Melody 1.0
 
+
 ## Documentation
 
 Install the plugin, then for each blog you want the memo displayed, go to the plugin preferences and:
@@ -34,8 +35,8 @@ Ce plugin parle français. ;-)
 
 ## Version history
 
-Current: 1.1 — Removed Perl version check, added hints and improved the widget HTML code to respect the system CSS margins.
-1.0 — First public release.
+* Current: 1.1 — Removed Perl version check, added hints and improved the widget HTML code to respect the system CSS margins.
+* 1.0 — First public release.
 
 
 ## Credits

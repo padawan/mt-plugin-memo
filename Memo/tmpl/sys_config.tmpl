@@ -1,0 +1,21 @@
+<mtapp:setting
+    id="has_global_memo"
+    label="<__trans phrase="Display a global message">"
+    hint='<__trans phrase="Check to display a global message on all CMS screens.">'
+    show_hint="1">
+    <input type="checkbox" name="has_global_memo" id="has_global_memo" value="1"<mt:if name="has_global_memo"> checked="checked"</mt:if> />
+</mtapp:setting>
+<mtapp:setting
+    id="global_memo_class"
+    label="<__trans phrase="CSS Class">"
+    hint='<__trans phrase="The CSS class to style the global message (e.g. info, alert, error).">'
+    show_hint="1">
+    <input type="text" size="10" name="global_memo_class" id="global_memo_class" value="<mt:var name="global_memo_class" escape="html">" />
+</mtapp:setting>
+<mtapp:setting
+    id="global_memo"
+    label="<__trans phrase="Message Body">"
+    hint="<__trans phrase='The message (in HTML).'>"
+    show_hint="1">
+    <textarea rows="5" cols="80" name="global_memo" id="global_memo"><mt:var name="global_memo" escape="html"></textarea>
+</mtapp:setting>

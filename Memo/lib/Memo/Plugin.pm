@@ -1,5 +1,5 @@
-# Memo - Displays a memo on the Edit Entry screen
-# Release : v1.1 2011-06-10
+# Memo - Displays a memo on the Edit Entry/Page screens
+# Release : v1.2 2012-01-08
 # Copyright © François Nonnenmacher, Ubiquitic
 
 package Memo::Plugin;
@@ -34,6 +34,23 @@ sub update_edit_entry {
 END
 		} ),
 		$header_node);
+}
+
+sub global_memo {
+    my ($cb, $app, $src) = @_;
+    my $plugin = $cb->plugin;
+	my $cfg = $plugin->get_config_hash('system');
+    return unless ($cfg->{has_global_memo});
+    my $class = $cfg->{global_memo_class};
+    my $memo = $cfg->{global_memo};
+    my $slug = <<END;
+<mtapp:statusmsg
+    id="global-memo"
+    class="$class">
+    $memo
+</mtapp:statusmsg>
+END
+    $$src =~ s/(<\$mt:var name=\"html_body\"\$>)/$slug$1/;
 }
 
 1;
