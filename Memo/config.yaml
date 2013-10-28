@@ -4,7 +4,7 @@ author_name: François Nonnenmacher, Ubiquitic
 author_link: http://ubiquitic.com/
 plugin_link: http://ubiquitic.com/memo-movable-type-plugin.html
 description: <__trans phrase="Display a memo on Edit Entry/Page screens, or a global one.">
-version: 1.2
+version: 1.2.0
 l10n_class: Memo::L10N
 
 system_config_template: sys_config.tmpl
