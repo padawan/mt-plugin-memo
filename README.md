@@ -4,14 +4,12 @@
 
 Memo can:
 * display a global message on top of every CMS screen;
-* place a text box on top of the other widgets in the right column of the entries and pages edit screen. The memo display and text are customizable per blog.
+* display a text box on top of the other widgets in the right column of the entries and/or pages edit screens. The memo display and text are customizable per site and blog.
 
 
 ## Requirements
 
-* MT 4.x
-* MT 5.x
-* Melody 1.0
+* MT 4.x, 5.x or 6.x
 
 
 ## Installation
@@ -44,15 +42,16 @@ Ce plugin parle français. ;-)
 
 ## Version history
 
-* Current: 1.2 — Added the option to display a global message.
+* Current: 1.3 — Added the option to display different messages for entries and pages.
+* 1.2 — Added the option to display a global message.
 * 1.1 — Removed Perl version check, added hints and improved the widget HTML code to respect the system CSS margins.
 * 1.0 — First public release.
 
 
 ## Credits
 
-Author: [Ubiquitic](http://ubiquitic.com/).  
-Copyright: 2011 Ubiquitic.  
+Author: [Ubiquitic](http://ubiquitic.com/).
+Copyright: Ubiquitic.
 License: [Artistic License 2.0](http://www.opensource.org/licenses/artistic-license-2.0.php)
 
 This free software is provided as-is WITHOUT ANY KIND OF GUARANTEE; you can redistribute it and/or modify it under the same terms as Perl itself.

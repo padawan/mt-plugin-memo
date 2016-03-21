@@ -15,7 +15,10 @@ use vars qw( %Lexicon );
 	'Display a memo on Edit Entry/Page screens, or a global one.' => 'Affiche un mémo partout ou sur les écrans d\'édition des pages et des notes',
 	'Memo Title' => 'Titre du mémo',
 	'Memo Body' => 'Texte du mémo',
-	'Check to display a memo widget on all Entry/Page edit screens.' => 'Cocher pour afficher un mémo sur les écrans d\'édition des pages et des notes.',
+	'Display on Edit Entry screens' => 'Afficher sur les écrans d\'édition des notes',
+	'Display on Edit Page screens' => 'Afficher sur les écrans d\'édition des pages',
+	'Check to display a memo widget on all Entry edit screens.' => 'Cocher pour afficher un mémo sur les écrans d\'édition des notes.',
+	'Check to display a memo widget on all Page edit screens.' => 'Cocher pour afficher un mémo sur les écrans d\'édition des pages.',
 	'The title for the memo widget (defaults to “Memo”).' => 'Le titre du mémo («&nbsp;Mémo&nbsp;» par défaut).',
 	'The memo body (in HTML). Hint: <code>&lt;ul&gt;&lt;li&gt;...&lt;/li&gt;&lt;/ul&gt;</code> works best.' => 'Le texte du mémo (en HTML). Suggestion&nbsp;: <code>&lt;ul&gt;&lt;li&gt;...&lt;/li&gt;&lt;/ul&gt;</code> fonctionne le mieux.',	
 );

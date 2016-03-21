@@ -1,21 +1,46 @@
 <mtapp:setting
     id="has_entry_memo"
-    label="<__trans phrase="Display a memo on Edit Entry/Page screens">"
-    hint='<__trans phrase="Check to display a memo widget on all Entry/Page edit screens.">'
+    label="<__trans phrase="Display on Edit Entry screens">"
+    hint='<__trans phrase="Check to display a memo widget on all Entry edit screens.">'
     show_hint="1">
-    <input type="checkbox" name="has_entry_memo" id="has_entry_memo" value="1"<mt:if name="has_entry_memo"> checked="checked"</mt:if> />
+    <input type="checkbox" name="has_entry_memo" id="has_entry_memo" value="1"<mt:if name="has_entry_memo"> checked="checked"</mt:if> onclick="toggleSubPrefs(this)" />
 </mtapp:setting>
+<div id="has_entry_memo-prefs" <mt:unless name="has_entry_memo">class="hidden"</mt:unless>>
+	<mtapp:setting
+		id="entry_memo_title"
+		label="<__trans phrase="Memo Title">"
+		hint='<__trans phrase="The title for the memo widget (defaults to “Memo”).">'
+		show_hint="1">
+		<input type="text" size="30" name="entry_memo_title" id="entry_memo_title" value="<mt:var name="entry_memo_title" escape="html">" />
+	</mtapp:setting>
+	<mtapp:setting
+		id="entry_memo"
+		label="<__trans phrase="Memo Body">"
+		hint="<__trans phrase='The memo body (in HTML). Hint: <code>&lt;ul&gt;&lt;li&gt;...&lt;/li&gt;&lt;/ul&gt;</code> works best.'>"
+		show_hint="1">
+		<textarea rows="8" cols="30" name="entry_memo" id="entry_memo"><mt:var name="entry_memo" escape="html"></textarea>
+	</mtapp:setting>
+</div>
 <mtapp:setting
-    id="entry_memo_title"
-    label="<__trans phrase="Memo Title">"
-    hint='<__trans phrase="The title for the memo widget (defaults to “Memo”).">'
+    id="has_page_memo"
+    label="<__trans phrase="Display on Edit Page screens">"
+    hint='<__trans phrase="Check to display a memo widget on all Page edit screens.">'
     show_hint="1">
-    <input type="text" size="30" name="entry_memo_title" id="entry_memo_title" value="<mt:var name="entry_memo_title" escape="html">" />
+    <input type="checkbox" name="has_page_memo" id="has_page_memo" value="1"<mt:if name="has_page_memo"> checked="checked"</mt:if> onclick="toggleSubPrefs(this)" />
 </mtapp:setting>
-<mtapp:setting
-    id="entry_memo"
-    label="<__trans phrase="Memo Body">"
-    hint="<__trans phrase='The memo body (in HTML). Hint: <code>&lt;ul&gt;&lt;li&gt;...&lt;/li&gt;&lt;/ul&gt;</code> works best.'>"
-    show_hint="1">
-    <textarea rows="8" cols="30" name="entry_memo" id="entry_memo"><mt:var name="entry_memo" escape="html"></textarea>
-</mtapp:setting>
+<div id="has_page_memo-prefs" <mt:unless name="has_page_memo">class="hidden"</mt:unless>>
+	<mtapp:setting
+		id="page_memo_title"
+		label="<__trans phrase="Memo Title">"
+		hint='<__trans phrase="The title for the memo widget (defaults to “Memo”).">'
+		show_hint="1">
+		<input type="text" size="30" name="page_memo_title" id="page_memo_title" value="<mt:var name="page_memo_title" escape="html">" />
+	</mtapp:setting>
+	<mtapp:setting
+		id="page_memo"
+		label="<__trans phrase="Memo Body">"
+		hint="<__trans phrase='The memo body (in HTML). Hint: <code>&lt;ul&gt;&lt;li&gt;...&lt;/li&gt;&lt;/ul&gt;</code> works best.'>"
+		show_hint="1">
+		<textarea rows="8" cols="30" name="page_memo" id="page_memo"><mt:var name="page_memo" escape="html"></textarea>
+	</mtapp:setting>
+</div>
