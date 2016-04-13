@@ -1,5 +1,5 @@
 # Memo - Displays a memo on the Edit Entry/Page screens
-# Release : v1.2 2012-01-08
+# Release: v1.3 2016-03-21
 # Copyright © François Nonnenmacher, Ubiquitic
 
 package Memo::Plugin;
@@ -9,13 +9,22 @@ use MT;
 
 sub update_edit_entry {
 	my ($cb, $app, $param, $tmpl) = @_;
+	my $title = '';
+	my $memo = '';
     my $plugin = $cb->plugin;
 	my $cfg = $plugin->get_config_hash('blog:'.$app->blog->id);
-    return unless ($cfg->{has_entry_memo});
+	if ($app->param('_type') eq 'entry' && $cfg->{has_entry_memo}) {
+		$title = $cfg->{entry_memo_title} || $plugin->translate('Memo');
+    	$memo = $cfg->{entry_memo};
+    } else {
+    	if ($app->param('_type') eq 'page' && $cfg->{has_page_memo}) {
+			$title = $cfg->{page_memo_title} || $plugin->translate('Memo');
+			$memo = $cfg->{page_memo};
+		}
+    }
+    return unless ($memo);
 	my $header_node = $tmpl->getElementById('header_include');
 	return unless $header_node;
-    my $title = $cfg->{entry_memo_title} || $plugin->translate('Memo');
-    my $memo = $cfg->{entry_memo};
 	$tmpl->insertAfter(
 		$tmpl->createElement('var', {
 			name => 'related_content', 
